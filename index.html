@@ -1,68 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#090e1b">
+  <meta name="description" content="DealFinder USA is a sleek place to discover curated product picks across tech, home, gaming, audio and more. Browse, search and save favorites.">
+  <meta property="og:title" content="DealFinder USA — Discover your next great find">
+  <meta property="og:description" content="Find smarter. Shop happier. Discover curated picks, save favorites, and explore everything in one place.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="products.js"></script>
+  <script defer src="app.js"></script>
+  <title>DealFinder USA — Find smarter. Shop happier.</title>
+</head>
+<body>
+  <a href="#main" class="skip-link">Skip to main content</a>
+  <div class="page-glow" aria-hidden="true"></div>
+  <div class="announcement">
+    <div class="shell announcement__inner">
+      <span class="announcement__ping" aria-hidden="true"></span>
+      <span>Welcome to the new way to discover your next favorite find.</span>
+      <a href="#deals">Explore the collection <span aria-hidden="true">↗</span></a>
+    </div>
+  </div>
+  <header class="site-header" id="top">
+    <div class="shell navbar">
+      <a class="brand" href="#top" aria-label="DealFinder USA homepage">
+        <span class="brand__mark"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="12" stroke="currentColor" stroke-width="2.7"/><circle cx="20" cy="20" r="3" fill="currentColor"/><path d="M20 8v12l9-7" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+        <span class="brand__word">deal<span>finder</span><span class="brand__usa">USA</span></span>
+      </a>
+      <nav class="navlinks" id="navLinks" aria-label="Primary navigation">
+        <a href="#deals">Discover deals</a>
+        <a href="#categories">Categories</a>
+        <a href="#why-us">How it works</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-button nav-search" type="button" data-focus-search aria-label="Search deals" title="Search deals"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg></button>
+        <button class="saved-button" id="openSaved" type="button" aria-label="Open saved deals"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.9a5.3 5.3 0 0 0-7.5 0L12 6.2l-1.3-1.3a5.3 5.3 0 0 0-7.5 7.5l8.8 8.7 8.8-8.7a5.3 5.3 0 0 0 0-7.5Z"/></svg><span>Saved</span><span id="savedCount" class="saved-button__count">0</span></button>
+        <button class="icon-button menu-button" id="menuButton" type="button" aria-label="Open navigation" aria-controls="navLinks" aria-expanded="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+      </div>
+    </div>
+  </header>
 
-DEALFINDERUSA ✦
-Explore finds ↗
-DISCOVER SMARTER • SHOP CONFIDENTLY
-Great finds. Zero guesswork.
-A cleaner way to explore interesting Amazon products. Browse what catches your eye, get the details, and continue to Amazon when you're ready.
-Explore the collection ↗How it works ↓
-Affiliate disclosure: We may earn from qualifying purchases. Prices and availability are checked on Amazon.
+  <main id="main">
+    <section class="hero" aria-labelledby="heroTitle">
+      <div class="hero__grid" aria-hidden="true"></div>
+      <div class="shell hero__layout">
+        <div class="hero__content">
+          <div class="eyebrow hero__eyebrow"><span class="eyebrow__spark">✳</span> A better way to find the good stuff <span class="eyebrow__line"></span></div>
+          <h1 id="heroTitle">Less searching.<br><span class="hero__h1-gradient">More finding<span class="period">.</span></span></h1>
+          <p class="hero__copy">Meet your new favorite corner of the internet. A beautifully simple way to explore exciting finds, save what you love, and get to the good stuff faster.</p>
+          <form class="hero-search" id="heroSearchForm" role="search" aria-label="Search products">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>
+            <label class="sr-only" for="heroSearchInput">What are you looking for?</label>
+            <input type="search" id="heroSearchInput" placeholder="What are you looking for?" autocomplete="off" enterkeyhint="search">
+            <button type="submit">Find it <span aria-hidden="true">↗</span></button>
+          </form>
+          <div class="trending"><span>Try searching:</span><button type="button" data-search="headphones">Headphones ↗</button><button type="button" data-search="desk">Desk setup ↗</button><button type="button" data-search="gaming">Gaming ↗</button></div>
+          <div class="hero__footer-note"><span class="hero__footer-icon">✦</span> Smart browsing, zero clutter. <span class="dot-separator">·</span> Curated discovery, made simple.</div>
+        </div>
+        <div class="hero-visual" aria-label="Illustration of a featured headphone product with deal discovery graphics">
+          <div class="hero-visual__aura"></div>
+          <div class="radar radar--1"></div><div class="radar radar--2"></div><div class="radar radar--3"></div>
+          <div class="radar__line"></div>
+          <div class="hero-product" id="heroProduct"><img src="assets/headphones.svg" width="600" height="520" alt="Stylized illustration of premium over-ear headphones" fetchpriority="high"></div>
+          <div class="hero-float hero-float--top"><span class="hero-float__icon">✦</span><span><small>ON OUR RADAR</small><strong>Fresh finds</strong></span><span class="hero-float__spark">↗</span></div>
+          <div class="hero-float hero-float--bottom"><span class="hero-float__pulse"><span></span></span><span><small>DISCOVER WHAT'S NEXT</small><strong>Tech · Home · More</strong></span></div>
+          <div class="hero-visual__micro hero-visual__micro--one">✧</div><div class="hero-visual__micro hero-visual__micro--two">✳</div>
+        </div>
+      </div>
+      <div class="hero__scroll shell"><span class="scroll-pill"><span></span></span> SCROLL TO EXPLORE <span class="hero__scroll-line"></span></div>
+    </section>
 
+    <section class="value-strip" aria-label="Website highlights">
+      <div class="shell value-strip__grid">
+        <div><span class="value-icon">✳</span><span><strong>Find what fits</strong><small>Explore categories in seconds</small></span></div>
+        <div><span class="value-icon">⌕</span><span><strong>Discover with ease</strong><small>One clean, searchable collection</small></span></div>
+        <div><span class="value-icon">♡</span><span><strong>Keep your favorites</strong><small>Save picks right in your browser</small></span></div>
+      </div>
+    </section>
 
-🎧
-EXPLORE • ELECTRONICS
-Find something brilliant.
-⌚
-DISCOVER • TECH
-Everyday upgrades.
-✦ CURATED DISCOVERY
-ELECTRONICS
-HOME ESSENTIALS
-SMART GADGETS
-EVERYDAY FINDS
-TOOLS & GEAR
-ELECTRONICS
-HOME ESSENTIALS
-SMART GADGETS
-EVERYDAY FINDS
-TOOLS & GEAR
-MADE FOR BROWSING
-Find your kind of find.
-Choose a category and the collection updates instantly.
-THE COLLECTION
-Worth a closer look.
-Sample listings are shown until real affiliate products are added. No made-up prices or savings.
+    <section class="section categories-section" id="categories" aria-labelledby="categoryTitle">
+      <div class="shell">
+        <div class="section-head reveal"><div><p class="kicker"><span></span> YOUR WORLD, YOUR FINDS</p><h2 id="categoryTitle">A category for <em>every kind</em> of curious.</h2></div><p class="section-head__copy">The things you want, organized the way you actually shop.</p></div>
+        <div class="category-grid" id="categoryGrid">
+          <button class="category-tile category-tile--tech reveal" type="button" data-category="Tech"><span class="category-tile__decor">✳</span><span class="category-tile__icon">⌘</span><span class="category-tile__meta">01 / DISCOVER</span><strong>Tech & gadgets</strong><span class="category-tile__bottom">Explore tech <span>↗</span></span></button>
+          <button class="category-tile category-tile--audio reveal" type="button" data-category="Audio"><span class="category-tile__decor">♫</span><span class="category-tile__icon">♫</span><span class="category-tile__meta">02 / LISTEN</span><strong>Audio</strong><span class="category-tile__bottom">Explore audio <span>↗</span></span></button>
+          <button class="category-tile category-tile--home reveal" type="button" data-category="Home"><span class="category-tile__decor">⌂</span><span class="category-tile__icon">⌂</span><span class="category-tile__meta">03 / LIVE</span><strong>Home & living</strong><span class="category-tile__bottom">Explore home <span>↗</span></span></button>
+          <button class="category-tile category-tile--gaming reveal" type="button" data-category="Gaming"><span class="category-tile__decor">✣</span><span class="category-tile__icon">✣</span><span class="category-tile__meta">04 / PLAY</span><strong>Gaming</strong><span class="category-tile__bottom">Explore gaming <span>↗</span></span></button>
+          <button class="category-tile category-tile--kitchen reveal" type="button" data-category="Kitchen"><span class="category-tile__decor">◕</span><span class="category-tile__icon">◕</span><span class="category-tile__meta">05 / MAKE</span><strong>Kitchen</strong><span class="category-tile__bottom">Explore kitchen <span>↗</span></span></button>
+          <button class="category-tile category-tile--lifestyle reveal" type="button" data-category="Lifestyle"><span class="category-tile__decor">✦</span><span class="category-tile__icon">✦</span><span class="category-tile__meta">06 / EVERYDAY</span><strong>Lifestyle</strong><span class="category-tile__bottom">Explore lifestyle <span>↗</span></span></button>
+        </div>
+      </div>
+    </section>
 
+    <section class="section deals-section" id="deals" aria-labelledby="dealsTitle">
+      <div class="shell">
+        <div class="section-head section-head--deals reveal"><div><p class="kicker"><span></span> THE COLLECTION</p><h2 id="dealsTitle">Good finds. <em>Great taste.</em></h2><p class="deals-intro">Browse the collection, pick your category, and save the things worth coming back for.</p></div><span class="collection-label"><span class="collection-label__dot"></span> DISCOVERY MODE</span></div>
+        <div class="demo-notice" id="demoNotice"><span class="demo-notice__icon">ⓘ</span><p><strong>Preview collection:</strong> The initial listings are clearly labeled design examples, not real-time Amazon deals or prices. <a href="#faq">How do I add real products?</a></p></div>
+        <div class="deal-toolbar">
+          <div class="deal-toolbar__search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg><label class="sr-only" for="dealSearch">Search all products</label><input type="search" id="dealSearch" placeholder="Search the collection..." autocomplete="off"><button id="clearSearch" class="search-clear" type="button" aria-label="Clear search" hidden>×</button></div>
+          <div class="deal-toolbar__right"><label class="sr-only" for="sortDeals">Sort products</label><select id="sortDeals"><option value="featured">Featured picks</option><option value="priceAsc">Demo price: low to high</option><option value="priceDesc">Demo price: high to low</option><option value="name">Name: A to Z</option></select><div class="view-toggle" role="group" aria-label="Product view"><button type="button" class="is-active" id="gridView" aria-pressed="true" title="Grid view" aria-label="Grid view"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg></button><button type="button" id="listView" aria-pressed="false" title="List view" aria-label="List view"><svg viewBox="0 0 24 24"><path d="M9 5h12M9 12h12M9 19h12"/><path d="M3 5h2M3 12h2M3 19h2"/></svg></button></div></div>
+        </div>
+        <div class="filter-bar"><div class="filter-chips" id="filterChips" aria-label="Filter by category"><button type="button" data-filter="All" class="is-active" aria-pressed="true">All finds</button><button type="button" data-filter="Tech" aria-pressed="false">Tech</button><button type="button" data-filter="Audio" aria-pressed="false">Audio</button><button type="button" data-filter="Home" aria-pressed="false">Home</button><button type="button" data-filter="Gaming" aria-pressed="false">Gaming</button><button type="button" data-filter="Kitchen" aria-pressed="false">Kitchen</button><button type="button" data-filter="Lifestyle" aria-pressed="false">Lifestyle</button></div><button type="button" class="saved-filter" id="savedFilter" aria-pressed="false"><span>♡</span> Saved only</button></div>
+        <div class="results-bar"><p id="resultSummary" aria-live="polite">Exploring the collection</p><button type="button" id="resetFilters" class="text-action" hidden>Clear all filters ↗</button></div>
+        <div class="product-grid" id="productGrid" aria-live="off"></div>
+        <div class="empty-state" id="emptyState" hidden><span>⌕</span><h3>No matches on the radar.</h3><p>Try a different search or category. Something good is always around the corner.</p><button type="button" class="button button--lime" id="emptyReset">Show all finds ↗</button></div>
+        <p class="deal-footnote">Product artwork and example prices in preview mode are illustrative only. For real products, click-through links can show current pricing and availability on Amazon.</p>
+      </div>
+    </section>
 
-FeaturedName A–ZCategory A–Z
-♡ Saved onlyReset
-LESS NOISE. BETTER DISCOVERY.
-Everything you need. Nothing you don't.
-No cluttered price claims. No confusing shopping experience. Just useful product information and a clear path to Amazon.
-Browse products ↗
-✧
-SIMPLE FROM START TO FINISH
-Three steps to your next find.
-01
-Discover
-Browse the collection, filter categories, or search for what matters to you.
-02
-Explore
-Open a product to read more and decide whether it fits your needs.
-03
-Shop on Amazon
-Follow the affiliate link to Amazon to confirm details, current pricing, and availability.
-GOOD TO KNOW
-Quick answers.
-Does DealFinder USA sell products directly?
-No. We help visitors discover products. Purchases take place on Amazon, where checkout, shipping, and returns are handled according to Amazon's terms.
-Are the prices and discounts guaranteed?
-No. Prices and availability can change. Always check the product page on Amazon for current details.
-How does DealFinder USA earn money?
-We may earn a commission when you buy through eligible affiliate links, at no additional cost to you.
-Can I save products for later?
-Yes. Tap the heart on a card. Saved selections stay in this browser on this device.
-DEALFINDER USA ✦
-As an Amazon Associate I earn from qualifying purchases.
-Some links may be affiliate links. Product information and availability should be verified on Amazon.
-Back to top ↑
-© DealFinder USA
+    <section class="statement-section" aria-label="Brand statement"><div class="statement-marquee" aria-hidden="true"><div class="statement-marquee__track"><span>DISCOVER MORE <b>✳</b> SEARCH LESS <b>✳</b> FIND BETTER <b>✳</b> DISCOVER MORE <b>✳</b> SEARCH LESS <b>✳</b> FIND BETTER <b>✳</b></span><span>DISCOVER MORE <b>✳</b> SEARCH LESS <b>✳</b> FIND BETTER <b>✳</b> DISCOVER MORE <b>✳</b> SEARCH LESS <b>✳</b> FIND BETTER <b>✳</b></span></div></div></section>
+
+    <section class="section how-section" id="why-us" aria-labelledby="howTitle"><div class="shell how-layout"><div class="how-intro reveal"><p class="kicker"><span></span> MADE TO MAKE SENSE</p><h2 id="howTitle">The thrill of finding.<br><em>Without the endless scrolling.</em></h2><p>A less noisy shopping experience, built around finding products you actually care about.</p><a href="#deals" class="button button--outline">Start exploring <span>↗</span></a></div><div class="how-cards"><article class="how-card reveal"><span class="how-card__number">01</span><span class="how-card__symbol">⌕</span><h3>Discover your thing.</h3><p>Jump into categories or search by what you need. No labyrinth of confusing menus.</p></article><article class="how-card reveal"><span class="how-card__number">02</span><span class="how-card__symbol">♡</span><h3>Save your favorites.</h3><p>Hold onto the best finds. They stay saved in your browser, ready when you come back.</p></article><article class="how-card reveal"><span class="how-card__number">03</span><span class="how-card__symbol">↗</span><h3>Shop at the source.</h3><p>When a product has a real affiliate link, head straight to Amazon to check the latest details.</p></article></div></div></section>
+
+    <section class="section next-section" aria-labelledby="nextTitle"><div class="shell"><div class="next-panel reveal"><div class="next-panel__orb next-panel__orb--one"></div><div class="next-panel__orb next-panel__orb--two"></div><div class="next-panel__content"><p class="kicker kicker--dark"><span></span> THE NEXT CHAPTER</p><h2 id="nextTitle">Your deal radar.<br><em>Just getting started.</em></h2><p>Today, it's a beautifully organized place for your picks. In the future, it can grow into a smarter discovery engine powered by approved product-data integrations.</p><div class="next-panel__actions"><a href="#deals" class="button button--dark">Explore the collection <span>↗</span></a><a href="#faq" class="next-panel__link">Learn how it works <span>→</span></a></div></div><div class="next-radar" aria-hidden="true"><span class="next-radar__outer"></span><span class="next-radar__mid"></span><span class="next-radar__inner"></span><span class="next-radar__pointer"></span><span class="next-radar__center">✳</span><span class="next-radar__pip next-radar__pip--one"></span><span class="next-radar__pip next-radar__pip--two"></span></div></div></div></section>
+
+    <section class="section faq-section" id="faq" aria-labelledby="faqTitle"><div class="shell faq-layout"><div class="faq-intro reveal"><p class="kicker"><span></span> GOOD QUESTIONS</p><h2 id="faqTitle">A little clarity<br><em>goes a long way.</em></h2><p>Everything you should know before exploring.</p></div><div class="faq-list reveal"><details><summary>Are the products and prices on this site real? <span class="faq-plus">+</span></summary><p>This starter website launches in <strong>preview mode</strong>. All preloaded products, illustrated artwork, discounts, and prices are sample design content, not current Amazon offers. The owner can replace them with genuine affiliate listings.</p></details><details><summary>How do I add real Amazon affiliate products? <span class="faq-plus">+</span></summary><p>Edit the easy-to-read <code>products.js</code> file: enter the real product title, description, category, image, and your Amazon Associates product link. Set <code>status: "live"</code>. Published listings display a “View on Amazon” button without an unverified price.</p></details><details><summary>Will clicking a product take me to Amazon? <span class="faq-plus">+</span></summary><p>Real, published listings with a valid Amazon product link go to Amazon in a new tab. Sample listings open a preview window instead, so visitors are never sent to an invented deal.</p></details><details><summary>How do saved deals work? <span class="faq-plus">+</span></summary><p>Tap the heart on any product to save it. Your selections are stored on your own device, in this browser only. No account or sign-in is needed.</p></details><details><summary>Does the website automatically find live Amazon deals? <span class="faq-plus">+</span></summary><p>Not yet. This version is a fast, fully static GitHub Pages site. Adding automated Amazon data requires an authorized API or other permitted integration and a secure backend. Preview listings do not claim live prices or availability.</p></details></div></div></section>
+  </main>
+
+  <footer class="footer"><div class="shell"><div class="footer__top"><div class="footer__brand"><a class="brand" href="#top" aria-label="Return to DealFinder USA homepage"><span class="brand__mark"><svg viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="12" stroke="currentColor" stroke-width="2.7"/><circle cx="20" cy="20" r="3" fill="currentColor"/><path d="M20 8v12l9-7" stroke="currentColor" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="brand__word">deal<span>finder</span><span class="brand__usa">USA</span></span></a><p>Find smarter. Shop happier.<br>A better place to discover what's next.</p></div><div class="footer__links"><div><strong>Explore</strong><a href="#deals">All finds</a><a href="#categories">Categories</a><a href="#deals" data-footer-saved>Saved deals</a></div><div><strong>About</strong><a href="#why-us">How it works</a><a href="#faq">Frequently asked</a><a href="#top">Back to top ↑</a></div></div></div><div class="affiliate-disclosure"><span class="affiliate-disclosure__label">AFFILIATE DISCLOSURE</span><p>As an Amazon Associate I earn from qualifying purchases. Some links on this site may be paid affiliate links. We may earn a commission when you buy through them, at no additional cost to you. DealFinder USA is not sponsored or endorsed by Amazon. Product prices and availability must be checked on Amazon. Initial sample listings are not live offers.</p></div><div class="footer__bottom"><span>© <span id="footerYear">2026</span> DealFinder USA. Discover better.</span><span>Crafted for the joy of finding ✳</span></div></div></footer>
+
+  <dialog id="productDialog" class="dialog product-dialog" aria-labelledby="dialogTitle"><div id="productDialogContent"></div></dialog>
+  <dialog id="savedDialog" class="dialog saved-dialog" aria-labelledby="savedTitle"><div class="saved-dialog__head"><div><p class="kicker"><span></span> YOUR SHORTLIST</p><h2 id="savedTitle">Saved finds <span id="savedDialogCount">0</span></h2></div><button type="button" id="closeSaved" class="dialog-close" aria-label="Close saved deals">×</button></div><div class="saved-dialog__body" id="savedItems"></div><div class="saved-dialog__foot"><button type="button" id="browseMore" class="button button--lime">Keep exploring <span>↗</span></button></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <button type="button" id="backToTop" class="back-to-top" aria-label="Scroll to top" title="Back to top">↑</button>
+</body>
+</html>
