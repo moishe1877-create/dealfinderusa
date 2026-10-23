@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 520" role="img" aria-label="Stylized product illustration">
+    <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#253441"/><stop offset="1" stop-color="#162B38"/></linearGradient>
+    <radialGradient id="halo"><stop stop-color="#99D1FC" stop-opacity=".27"/><stop offset="1" stop-color="#99D1FC" stop-opacity="0"/></radialGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#F5F8FF"/><stop offset=".35" stop-color="#9BABBE"/><stop offset=".7" stop-color="#334A66"/><stop offset="1" stop-color="#E3EDFF"/></linearGradient>
+    <linearGradient id="dark" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#3C4E69"/><stop offset=".48" stop-color="#152139"/><stop offset="1" stop-color="#080F20"/></linearGradient>
+    <linearGradient id="lime" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#E7FFAA"/><stop offset="1" stop-color="#A5EC49"/></linearGradient>
+    <linearGradient id="blue" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#9BD6FF"/><stop offset="1" stop-color="#626BFF"/></linearGradient>
+    <filter id="shadow" x="-.6" y="-.6" width="2.2" height="2.2"><feGaussianBlur in="SourceAlpha" stdDeviation="17"/><feOffset dy="17"/><feComponentTransfer><feFuncA type="linear" slope=".43"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+    <filter id="blur"><feGaussianBlur stdDeviation="16"/></filter>
+    <pattern id="dots" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1.4" fill="#F4F9FF" opacity=".10"/></pattern>
+    </defs>
+    <rect width="600" height="520" fill="url(#bg)"/>
+    <rect width="600" height="520" fill="url(#dots)"/>
+    <ellipse cx="304" cy="240" rx="246" ry="236" fill="url(#halo)"/>
+    <circle cx="493" cy="91" r="104" fill="none" stroke="#99D1FC" stroke-opacity=".12" stroke-width="1"/>
+    <circle cx="493" cy="91" r="75" fill="none" stroke="#99D1FC" stroke-opacity=".13" stroke-width="1"/>
+    <path d="M35 415 Q300 280 580 444" fill="none" stroke="#FFF" stroke-opacity=".07" stroke-width="2"/>
+    <ellipse cx="304" cy="430" rx="160" ry="22" fill="#020B16" opacity=".47" filter="url(#blur)"/>
+    
+    <g filter="url(#shadow)"><path d="M256 134V89q0-36 45-36t45 36v45" fill="none" stroke="#D0D9EA" stroke-width="17"/><path d="M205 194q-71 8-74 89v94" fill="none" stroke="#566D89" stroke-width="24" stroke-linecap="round"/><path d="M396 194q70 8 75 89v94" fill="none" stroke="#566D89" stroke-width="24" stroke-linecap="round"/><rect x="191" y="123" width="218" height="296" rx="78" fill="url(#metal)"/><rect x="203" y="133" width="195" height="278" rx="69" fill="#243750"/><path d="M203 225q93-29 195 0v112H203z" fill="#182A43"/><rect x="224" y="276" width="149" height="113" rx="26" fill="#324A67" stroke="#8097B3" stroke-width="4"/><path d="M244 311h109" stroke="#A4FF72" stroke-width="6" stroke-linecap="round"/><path d="M240 204q58-19 120 0" fill="none" stroke="#A1B3C9" stroke-width="5"/><rect x="280" y="181" width="38" height="13" rx="6" fill="#C8FF81"/></g>
+    </svg>
