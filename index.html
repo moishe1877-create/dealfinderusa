@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#090e1b">
+  <meta name="theme-color" content="#070d19">
   <meta name="description" content="DealFinder USA is a sleek place to discover curated product picks across tech, home, gaming, audio and more. Browse, search and save favorites.">
   <meta property="og:title" content="DealFinder USA — Discover your next great find">
   <meta property="og:description" content="Find smarter. Shop happier. Discover curated picks, save favorites, and explore everything in one place.">
@@ -13,13 +13,17 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="motion.css">
   <script defer src="products.js"></script>
   <script defer src="app.js"></script>
+  <script defer src="motion.js"></script>
   <title>DealFinder USA — Find smarter. Shop happier.</title>
 </head>
 <body>
   <a href="#main" class="skip-link">Skip to main content</a>
   <div class="page-glow" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <div class="cursor-spotlight" id="cursorSpotlight" aria-hidden="true"></div>
   <div class="announcement">
     <div class="shell announcement__inner">
       <span class="announcement__ping" aria-hidden="true"></span>
@@ -50,6 +54,8 @@
   <main id="main">
     <section class="hero" aria-labelledby="heroTitle">
       <div class="hero__grid" aria-hidden="true"></div>
+      <div class="hero__aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+      <div class="hero__stars" aria-hidden="true"></div>
       <div class="shell hero__layout">
         <div class="hero__content">
           <div class="eyebrow hero__eyebrow"><span class="eyebrow__spark">✳</span> A better way to find the good stuff <span class="eyebrow__line"></span></div>
@@ -62,15 +68,23 @@
             <button type="submit">Find it <span aria-hidden="true">↗</span></button>
           </form>
           <div class="trending"><span>Try searching:</span><button type="button" data-search="headphones">Headphones ↗</button><button type="button" data-search="desk">Desk setup ↗</button><button type="button" data-search="gaming">Gaming ↗</button></div>
+          <div class="hero-status" aria-label="Site overview"><span><i></i> DISCOVERY MODE <b>ON</b></span><span>06 CATEGORIES</span><span>CURATED PREVIEW</span></div>
           <div class="hero__footer-note"><span class="hero__footer-icon">✦</span> Smart browsing, zero clutter. <span class="dot-separator">·</span> Curated discovery, made simple.</div>
         </div>
         <div class="hero-visual" aria-label="Illustration of a featured headphone product with deal discovery graphics">
           <div class="hero-visual__aura"></div>
+          <div class="hero-visual__glass" aria-hidden="true"></div>
+          <div class="hero-visual__sweep" aria-hidden="true"></div>
+          <div class="orbit-dashes orbit-dashes--one" aria-hidden="true"></div>
+          <div class="orbit-dashes orbit-dashes--two" aria-hidden="true"></div>
+          <div class="orbit-satellite orbit-satellite--one" aria-hidden="true">✳</div>
+          <div class="orbit-satellite orbit-satellite--two" aria-hidden="true">✦</div>
           <div class="radar radar--1"></div><div class="radar radar--2"></div><div class="radar radar--3"></div>
           <div class="radar__line"></div>
           <div class="hero-product" id="heroProduct"><img src="assets/headphones.svg" width="600" height="520" alt="Stylized illustration of premium over-ear headphones" fetchpriority="high"></div>
           <div class="hero-float hero-float--top"><span class="hero-float__icon">✦</span><span><small>ON OUR RADAR</small><strong>Fresh finds</strong></span><span class="hero-float__spark">↗</span></div>
           <div class="hero-float hero-float--bottom"><span class="hero-float__pulse"><span></span></span><span><small>DISCOVER WHAT'S NEXT</small><strong>Tech · Home · More</strong></span></div>
+          <div class="hero-hud hero-hud--one" aria-hidden="true"><span class="hero-hud__bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span><span>DISCOVERY ENGINE<br><b>VISUAL MODE</b></span></div>
           <div class="hero-visual__micro hero-visual__micro--one">✧</div><div class="hero-visual__micro hero-visual__micro--two">✳</div>
         </div>
       </div>
@@ -82,6 +96,46 @@
         <div><span class="value-icon">✳</span><span><strong>Find what fits</strong><small>Explore categories in seconds</small></span></div>
         <div><span class="value-icon">⌕</span><span><strong>Discover with ease</strong><small>One clean, searchable collection</small></span></div>
         <div><span class="value-icon">♡</span><span><strong>Keep your favorites</strong><small>Save picks right in your browser</small></span></div>
+      </div>
+    </section>
+
+    <section class="signal-section" id="spotlight" aria-labelledby="signalTitle">
+      <div class="shell signal-section__shell">
+        <div class="signal-heading reveal">
+          <p class="kicker"><span></span> THE DISCOVERY EXPERIENCE</p>
+          <h2 id="signalTitle">Not another list.<br><em>A whole new feeling.</em></h2>
+          <p>Explore a rotating selection of our illustrative picks. A little more wonder in every discovery.</p>
+          <a class="signal-heading__link" href="#deals">Explore the collection <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="signal-console reveal" id="signalConsole" aria-label="Interactive featured product showcase">
+          <div class="signal-console__top"><span class="signal-console__identity"><i></i> DF / DISCOVERY STUDIO <small>— CONCEPT PREVIEW</small></span><span class="signal-console__indicators" aria-hidden="true"><i></i><i></i><i></i></span></div>
+          <div class="signal-console__body">
+            <div class="signal-stage" id="signalStage">
+              <div class="signal-stage__halo"></div><div class="signal-stage__grid"></div>
+              <div class="signal-stage__ring signal-stage__ring--outer"></div><div class="signal-stage__ring signal-stage__ring--inner"></div>
+              <div class="signal-stage__cross signal-stage__cross--tl">+</div><div class="signal-stage__cross signal-stage__cross--br">+</div>
+              <span class="signal-stage__coordinate signal-stage__coordinate--top">DF.000 / STUDIO</span>
+              <img id="signalImage" class="signal-stage__image" src="assets/headphones.svg" width="600" height="520" alt="Illustrative featured product">
+              <span class="signal-stage__coordinate signal-stage__coordinate--bottom">CURATED · NOT A LIVE OFFER</span>
+            </div>
+            <div class="signal-info">
+              <div class="signal-info__number"><span id="signalIndex">01</span> / 03 <span class="signal-info__ruler"></span></div>
+              <div class="signal-info__tag"><span class="signal-info__tag-dot"></span> ON THE RADAR</div>
+              <p class="signal-info__category" id="signalCategory">AUDIO / FEATURED CONCEPT</p>
+              <h3 id="signalName">Orbit Studio Headphones</h3>
+              <p class="signal-info__description" id="signalDescription">A fresh concept for your next find.</p>
+              <div class="signal-info__footer">
+                <div class="signal-switches" role="group" aria-label="Featured product slides">
+                  <button type="button" class="signal-switch is-active" data-signal-index="0" aria-label="Show featured item 1" aria-pressed="true">01</button>
+                  <button type="button" class="signal-switch" data-signal-index="1" aria-label="Show featured item 2" aria-pressed="false">02</button>
+                  <button type="button" class="signal-switch" data-signal-index="2" aria-label="Show featured item 3" aria-pressed="false">03</button>
+                </div>
+                <a href="#deals" class="signal-arrow" aria-label="Browse all picks">↗</a>
+              </div>
+            </div>
+          </div>
+          <div class="signal-console__bottom"><span>CURATED IDEAS / VISUAL EXPLORATION</span><span><i></i> INTERACTIVE SHOWCASE</span></div>
+        </div>
       </div>
     </section>
 
